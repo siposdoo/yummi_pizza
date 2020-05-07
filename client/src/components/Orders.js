@@ -56,6 +56,18 @@ class Orders extends Component {
             (
                 <p>Nothing.</p>
             )
+        if (this.props.items.length < 1) {
+
+
+            return (<div className="container">
+                <div className="cart">
+                    <h5 className="center">Please order something !!!</h5>
+                    <h5 className="center">Click to our Yummi pizza menu and order some pizzas</h5>
+
+                </div>
+
+            </div>)
+        }
         return (
             <div className="container">
                 <div className="cart">
@@ -67,7 +79,9 @@ class Orders extends Component {
                 <Recipe />
             </div>
         )
+
     }
+
 }
 
 

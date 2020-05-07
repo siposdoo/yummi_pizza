@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ADD_INIT, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, CHANGE_CURRENCY } from './action-types/cart-actions'
+import { RESET_CART,ADD_INIT, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, CHANGE_CURRENCY } from './action-types/cart-actions'
 
 export const getAll = () => {
     return axios.get('http://localhost:8000/api/pizzas', {
@@ -55,4 +55,12 @@ export const changeCurrency = () => {
         type: CHANGE_CURRENCY
     }
 }
+
+//reset cart state 
+export const resetCart = () => {
+    return {
+        type: RESET_CART
+    }
+}
+
 

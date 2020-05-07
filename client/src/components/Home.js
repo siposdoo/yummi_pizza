@@ -36,7 +36,7 @@ class Home extends Component {
         return (
             <div className="container">
                 {this.props.items.length === 0 &&
-                    <h3 className="center">Click on pizza menu to order</h3>
+                    <h3 className="center">Click on Yummi pizza menu to order</h3>
                 }
 
                 <h3 className="center">To change currency click on curr on nav menu</h3>

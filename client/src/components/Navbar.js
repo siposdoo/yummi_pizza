@@ -14,10 +14,10 @@ const Navbar = (props) => {
 
         <nav className="nav-wrapper blue">
             <div className="container">
-                <Link to="/" className="brand-logo">THE YUMMI PIZZA</Link>
+                <Link to="/" className="brand-logo">YUMMI PIZZA</Link>
 
                 <ul className="right">
-                    <li><Link to="/">Pizza Menu</Link></li>
+                    <li><Link to="/">Yummi Pizza Menu</Link></li>
 
                     <li><Link to="/cart">{props.total > 0 && <span style={myBadge} className="badge">{(props.total * CURR[props.curr].ratio).toFixed(2)} {CURR[props.curr].name}</span>} <i className="material-icons">shopping_cart</i></Link></li>
 

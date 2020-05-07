@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Orders from './components/Orders'
 import Admin from './components/Admin'
+import Thnx from './components/Thnx'
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/cart" component={Orders} />
+            <Route path="/thnx" component={Thnx} />
             <Route path="/admin" component={Admin} />
           </Switch>
         </div>

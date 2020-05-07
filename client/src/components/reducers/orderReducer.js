@@ -1,18 +1,17 @@
 import { getAll } from '../actions/cartActions'
 
 
-import { SUB_SHIPPING, ADD_INIT, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, ADD_SHIPPING, CHANGE_CURRENCY } from '../actions/action-types/cart-actions'
+import { RESET_CART, SUB_SHIPPING, ADD_INIT, ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, ADD_SHIPPING, CHANGE_CURRENCY } from '../actions/action-types/cart-actions'
 
 let allData = []
-let itemList = getAll().then((result) => {
+getAll().then((result) => {
     return result
-})
-
-itemList.then((result) => {
+}).then((result) => {
     result.map(item => {
         allData.push(item)
     })
 })
+
 
 let initState = {
     showCheckout: false,
@@ -129,6 +128,18 @@ const orderReducer = (state = initState, action) => {
         return {
             ...state,
             total: state.total - 6
+        }
+    }
+    if (action.type === RESET_CART) {
+        return {
+            ...state,
+            showCheckout: false,
+    it: [],
+    items: allData,
+
+    addedItems: [],
+    total: 0,
+    curr: 0
         }
     }
 

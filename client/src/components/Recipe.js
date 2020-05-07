@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { CURR } from '../currency'
 import axios from 'axios'
+import {Redirect } from 'react-router';
 
 
 class Recipe extends Component {
@@ -47,13 +48,18 @@ class Recipe extends Component {
             .then(res => {
                 console.log(res);
                 this.setState({ showCheckout: false })
-                this.props.addedItems = []
+                
+                this.props.resetCart()
+                 
+
+
                 
 
             })
         
         event.preventDefault();
-    }
+
+     }
     componentWillUnmount() {
         if (this.refs.shipping.checked)
             this.props.substractShipping()
@@ -125,7 +131,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addShipping: () => { dispatch({ type: 'ADD_SHIPPING' }) },
-        substractShipping: () => { dispatch({ type: 'SUB_SHIPPING' }) }
+        substractShipping: () => { dispatch({ type: 'SUB_SHIPPING' }) },
+        resetCart:()=>{dispatch({type:'RESET_CART'})}
     }
 }
 

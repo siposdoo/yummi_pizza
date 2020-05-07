@@ -1,25 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 class Admin extends Component {
     constructor(props) {
-        super(props) //since we are extending class Table so we have to use super in order to override Component class constructor
-        let a = this.getAllOrders()
-
-        this.state = { //state is by default an object
+        super(props) 
+        this.state = { 
             items: []
         }
     }
 
-    getAllOrders = () => {
-        axios.get('http://localhost:8000/api/orders')
-            .then((response) => {
-                this.a = response.data;
-
-            });
-
-
-    }
     renderTableData() {
         return this.state.items.map((item, index) => {
             const { id, name, address, email, phone, order } = item //destructuring
@@ -44,8 +32,8 @@ class Admin extends Component {
     render() {
         return (
             <div>
-                <h1 id='title'>You orders</h1>
-                <table id='students'>
+                <h1 className="center" id='title'>You orders</h1>
+                <table id='orders'>
                     <tbody>
                         {this.renderTableData()}
                     </tbody>

@@ -7,4 +7,6 @@ export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const ADD_SHIPPING = 'ADD_SHIPPING';
 export const CHANGE_CURRENCY = 'CHANGE_CURRENCY';
 export const SUB_SHIPPING = 'SUB_SHIPPING';
+export const RESET_CART = 'RESET_CART';
+
 
